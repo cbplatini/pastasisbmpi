@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>bombeiros</title>
+</head>
+<body>
+	<h2>Bombeiros</h2>
+	<ul>
+		{% for militar in militares %}
+		<li>
+			<a href="{% url 'militar_update' militar.id %}">{{militar.patente}} - {{militar.nome_guerra}}</a>
+			<a href="{% url 'militar_delete' militar.id %}">Deletar</a>
+		</li>
+		{% endfor %}
+    </ul>
+	<br>
+<a href="{% url 'militar_new' %}">Adicionar Militar</a>
+
+
+</body>
+</html>
