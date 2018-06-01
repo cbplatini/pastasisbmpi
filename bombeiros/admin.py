@@ -54,7 +54,13 @@ class OcorrenciaAdmin(admin.ModelAdmin):
     list_display = ('data_saida', 'livro', 'atendimento', 'cidade')
 admin.site.register(Ocorrencia, OcorrenciaAdmin)
 
-admin.site.register(Prevencao)
+class PrevencaoAdmin(admin.ModelAdmin):
+    #fields = ['nome', 'cidade']
+    search_fields = ['tipo', 'livro', 'cidade']
+    list_filter = ['tipo', 'livro', 'cidade', 'viaturas', 'atendimento', 'bairro']
+    list_display = ('data_saida', 'livro', 'atendimento', 'cidade')
+admin.site.register(Prevencao, PrevencaoAdmin)
+
 
 
 
