@@ -122,7 +122,7 @@ class Militar(models.Model):
     nacionalidade = models.CharField(max_length=30)
     pai = models.CharField(max_length=100)
     mae = models.CharField(max_length=100)
-    foto = models.ImageField(upload_to='militares_photo', null=True, blank=True)
+    foto = models.ImageField(upload_to='militares_photo', null=True)
     obs = models.TextField(blank=True)
 
     class Meta:
