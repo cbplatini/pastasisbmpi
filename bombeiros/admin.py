@@ -2,7 +2,8 @@ from django.contrib import admin
 from .models import *
 
 class QuartelAdmin(admin.ModelAdmin):
-    fields = ['nome', 'cidade']
+    #fields = ['nome', 'cidade']
+    list_display = ('nome', 'cidade')
 admin.site.register(Quartel, QuartelAdmin)
 
 admin.site.register(Estado)
