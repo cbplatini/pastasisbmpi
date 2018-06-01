@@ -4,6 +4,7 @@ from .models import *
 class QuartelAdmin(admin.ModelAdmin):
     #fields = ['nome', 'cidade']
     list_display = ('nome', 'cidade')
+    list_filter = ['cidade']
 admin.site.register(Quartel, QuartelAdmin)
 
 admin.site.register(Estado)
