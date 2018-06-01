@@ -291,6 +291,8 @@ class Ocorrencia(models.Model):
 	data_retorno = models.DateTimeField()
 	viaturas = models.ManyToManyField(Viatura)
 	atendimento = models.ManyToManyField(Quartel)
+    quantidade_vitimas = models.PositiveSmallIntegerField()
+    quantidade_obitos = models.PositiveSmallIntegerField()
 	bairro = models.ForeignKey(Bairro_ocorrencia, on_delete=models.CASCADE)
 	cidade = models.ForeignKey(Cidade_ocorrencia, on_delete=models.CASCADE)
 	descricao = models.TextField(max_length=300, blank=True)
