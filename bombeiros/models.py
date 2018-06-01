@@ -200,7 +200,7 @@ class Viatura(models.Model):
 	documento = models.FileField(blank=True)
 	obs = models.TextField(blank=True)	
 	def __str__(self):             
-		return self.especie_tipo + " - " + str(self.local)	
+		return self.marca_modelo + " - " + str(self.local)
 
 class Abastecimento(models.Model):
 	viatura = models.ForeignKey(Viatura, on_delete=models.CASCADE)
