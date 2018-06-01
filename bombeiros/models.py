@@ -286,18 +286,18 @@ class Bairro_prevencao(models.Model):
 		return self.nome	
 
 class Ocorrencia(models.Model):
-	tipo =  models.ManyToManyField(Tipo_ocorrencia)
-	data_saida = models.DateTimeField()
-	data_retorno = models.DateTimeField()
-	viaturas = models.ManyToManyField(Viatura)
-	atendimento = models.ManyToManyField(Quartel)
-    quantidade_vitimas = models.PositiveSmallIntegerField()
-    quantidade_obitos = models.PositiveSmallIntegerField()
-	bairro = models.ForeignKey(Bairro_ocorrencia, on_delete=models.CASCADE)
-	cidade = models.ForeignKey(Cidade_ocorrencia, on_delete=models.CASCADE)
-	descricao = models.TextField(max_length=300, blank=True)
-	livro = models.CharField(max_length=100)
-	obs = models.TextField(max_length=300, blank=True)	
+    tipo =  models.ManyToManyField(Tipo_ocorrencia)
+    data_saida = models.DateTimeField()
+    data_retorno = models.DateTimeField()
+    viaturas = models.ManyToManyField(Viatura)
+    atendimento = models.ManyToManyField(Quartel)
+    quantidade_vitimas = models.IntegerField()
+    quantidade_obitos = models.IntegerField()
+    bairro = models.ForeignKey(Bairro_ocorrencia, on_delete=models.CASCADE)
+    cidade = models.ForeignKey(Cidade_ocorrencia, on_delete=models.CASCADE)
+    descricao = models.TextField(max_length=300, blank=True)
+    livro = models.CharField(max_length=100)
+    obs = models.TextField(max_length=300, blank=True)
 	class Meta:
 		verbose_name_plural = "Ocorrências"
 		ordering = ['data_saida']
