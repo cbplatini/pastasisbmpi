@@ -46,7 +46,14 @@ admin.site.register(Cidade_ocorrencia)
 admin.site.register(Cidade_prevencao)
 admin.site.register(Bairro_ocorrencia)
 admin.site.register(Bairro_prevencao)
-admin.site.register(Ocorrencia)
+
+class OcorrenciaAdmin(admin.ModelAdmin):
+    #fields = ['nome', 'cidade']
+    search_fields = ['tipo', 'livro', 'cidade']
+    list_filter = ['tipo', 'livro', 'cidade', 'viaturas', 'atendimento', 'bairro']
+    list_display = ('data_saida', 'livro', 'atendimento', 'cidade')
+admin.site.register(Ocorrencia, OcorrenciaAdmin)
+
 admin.site.register(Prevencao)
 
 
