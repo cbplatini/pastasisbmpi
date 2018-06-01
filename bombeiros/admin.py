@@ -3,9 +3,8 @@ from .models import *
 
 class QuartelAdmin(admin.ModelAdmin):
     #fields = ['nome', 'cidade']
-    list_display = ['nome', 'cidade']
-    list_filter = ['cidade')
-    search_fields = ['nome', 'cidade']
+    list_display = ('nome', 'cidade')
+
 
 admin.site.register(Quartel, QuartelAdmin)
 
