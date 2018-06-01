@@ -3,12 +3,14 @@ from .models import *
 
 class QuartelAdmin(admin.ModelAdmin):
     #fields = ['nome', 'cidade']
+    search_fields = ['nome']
     list_filter = ['cidade']
     list_display = ('nome', 'cidade')
 admin.site.register(Quartel, QuartelAdmin)
 
 class MilitarAdmin(admin.ModelAdmin):
     #fields = ['nome', 'cidade']
+    search_fields = ['nome']
     list_filter = ['patente', 'lotacao']
     list_display = ('nome_guerra', 'sangue', 'patente', 'lotacao')
 admin.site.register(Militar, MilitarAdmin)
