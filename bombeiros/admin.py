@@ -3,6 +3,7 @@ from .models import *
 
 class QuartelAdmin(admin.ModelAdmin):
     #fields = ['nome', 'cidade']
+    list_filter = ['cidade']
     list_display = ('nome', 'cidade')
 
 
